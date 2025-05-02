@@ -1,0 +1,14 @@
+<app-loader
+  [@fadeInOutLoader]="(isLoading$ | async) ? 'visible' : 'hidden'"
+  ></app-loader>
+<div class="wrapper">
+  <div class="wrapper__container">
+    <app-top-bar></app-top-bar>
+    <div
+      [@routeAnimations]="getRouteAnimationData()"
+      class="wrapper__main" >
+      <router-outlet></router-outlet>
+    </div>
+    <app-footer></app-footer>
+  </div>
+</div>

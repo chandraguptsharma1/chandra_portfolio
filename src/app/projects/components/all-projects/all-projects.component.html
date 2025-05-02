@@ -1,0 +1,30 @@
+<div class="block-list">
+  <div class="block-list__top">
+    <div class="block-list__top-item">
+      <div
+        *ngIf="selectedTech.length !== 0"
+        class="block-list__top-title">{{ selectedTech.join('; ') | titlecase }} <span class="close"></span></div>
+    </div>
+  </div>
+  <div class="block-list__wrapper">
+    <div
+      *ngIf="(projects$ | async) as projects; else loading"
+      [@fadeInOut]
+      class="block-list__list">
+      <app-single-project
+        *ngFor="let project of projects; let idx = index"
+        [index]="idx"
+        [title]="project.title"
+        [image]="project.image"
+        [description]="project.description"
+        [icon]="project.stack"
+        [tech]="project.tech"
+        [link]="project.linkProject"
+      ></app-single-project>
+
+    </div>
+    <ng-container *ngIf="selectedTech.length === 0" >Select technology...</ng-container>
+    <ng-template #loading>Loading...</ng-template>
+  </div>
+</div>
+

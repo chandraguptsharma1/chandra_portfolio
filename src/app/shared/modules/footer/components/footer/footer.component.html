@@ -1,0 +1,42 @@
+<div class="footer">
+  <div class="footer__wrapper">
+    <div class="footer__find">
+      <div class="footer__find-text">find me in:</div>
+      <a
+        target="_blank"
+        [href]="(currentUser$ | async)?.telegramLinkUser"
+        class="footer__find-link"
+      >
+        <img src="/assets/images/icons/telegram-fill.svg" alt="telegram" />
+      </a>
+      <a
+        target="_blank"
+        [href]="(currentUser$ | async)?.instagramLinkUser"
+        class="footer__find-link"
+      >
+        <img src="/assets/images/icons/instagram-fill.svg" alt="instagram" />
+      </a>
+      <a
+        target="_blank"
+        [href]="(currentUser$ | async)?.linkedinLinkUser"
+        class="footer__find-link"
+      >
+        <img src="/assets/images/icons/linkedin-fill.svg" alt="linkedin" />
+      </a>
+      <a
+        [href]="(currentUser$ | async)?.mailLinkUser"
+        class="footer__find-link"
+      >
+        <img src="/assets/images/icons/mail-line.svg" alt="mail" />
+      </a>
+    </div>
+    <a
+      target="_blank"
+      href="https://github.com/chandraguptsharma1"
+      class="footer__git"
+    >
+      <span>@chandraguptsharma1</span>
+      <img src="/assets/images/icons/git.svg" alt="git" />
+    </a>
+  </div>
+</div>

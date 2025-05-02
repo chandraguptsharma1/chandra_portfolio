@@ -1,0 +1,27 @@
+@import url('node_modules/highlight.js/styles/github-dark.css');
+@import "./assets/styles/variables";
+@import "./assets/styles/mixins";
+@import "./assets/styles/fonts";
+@import "./assets/styles/reset";
+@import "./assets/styles/code";
+@import "./assets/styles/layout";
+@import "./assets/styles/nav";
+@import "./assets/styles/bio";
+@import "./assets/styles/card";
+@import "./assets/styles/form";
+
+@import "~quill/dist/quill.core.css";
+@import "~quill/dist/quill.snow.css";
+@import "./assets/styles/quiil";
+
+
+
+
+
+body{
+  overscroll-behavior: none;
+  font-family: var(--font-fira);
+  background: var(--bg-color);
+  color: var( --color-gray);
+}
+

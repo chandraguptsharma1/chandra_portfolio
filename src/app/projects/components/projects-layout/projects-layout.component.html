@@ -1,0 +1,14 @@
+<div class="layout">
+  <div class="layout__wrapper">
+    <div class="layout__nav">
+      <app-nav-bar-project
+        (techSelected)="updateSelectedTech($event)"
+      ></app-nav-bar-project>
+    </div>
+    <div class="layout__main">
+        <app-all-projects
+          [selectedTech]="selectedTech"
+        ></app-all-projects>
+    </div>
+  </div>
+</div>

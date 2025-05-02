@@ -1,0 +1,119 @@
+.footer {
+  position: relative;
+  z-index: 10;
+  background-color: var(--bg-color-main);
+  height: 50px;
+  border-top: 1px solid var(--color-border-gray-dark);
+  @media screen and (max-width: 1500px) {
+    height: 40px;
+  }
+
+  &__wrapper {
+    display: flex;
+    min-height: 100%;
+  }
+
+  &__git {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    color: var(--color-gray);
+    font-size: 16px;
+    font-weight: 450;
+    line-height: normal;
+    gap: 5px;
+    border-left: 1px solid var(--color-border-gray-dark);
+    transition: color .3s ease;
+    @media screen and (max-width: 550px) {
+      padding: 0;
+      width: 40px;
+      border-left: none;
+      border-right: 1px solid var(--color-border-gray-dark);
+    }
+
+    span {
+      @media screen and (max-width: 550px) {
+        display: none;
+      }
+    }
+
+    &:hover {
+      color: var(--color-white);
+    }
+
+    &:hover {
+      img {
+        filter: grayscale(1) brightness(200%);
+      }
+    }
+
+    img {
+      transition: filter .3s ease;
+      @media screen and (max-width: 1500px) {
+        width: 17px;
+        height: 17px;
+      }
+    }
+
+    @media screen and (max-width: 1500px) {
+      font-size: 13px;
+    }
+
+
+  }
+
+  &__find {
+    display: flex;
+    flex: 1 1 auto;
+    @media screen and (max-width: 550px) {
+      flex: 0 1 auto;
+    }
+
+    &-text {
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      color: var(--color-gray);
+      font-size: 16px;
+      font-weight: 450;
+      line-height: normal;
+      border-right: 1px solid var(--color-border-gray-dark);
+      @media screen and (max-width: 1500px) {
+        font-size: 13px;
+      }
+      @media screen and (max-width: 1500px) {
+        padding: 0 11px;
+        font-size: 11px;
+      }
+
+    }
+
+    &-link {
+      width: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-right: 1px solid var(--color-border-gray-dark);
+      @media screen and (max-width: 1500px) {
+        width: 40px;
+      }
+
+      &:hover {
+        img {
+          filter: grayscale(1) brightness(200%);
+        }
+      }
+
+      img {
+        width: 24px;
+        height: 24px;
+        transition: filter .3s ease;
+        @media screen and (max-width: 1500px) {
+          width: 17px;
+          height: 17px;
+        }
+      }
+    }
+  }
+}

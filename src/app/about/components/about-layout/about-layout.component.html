@@ -1,0 +1,12 @@
+<div class="layout">
+  <div class="layout__wrapper">
+    <div class="layout__nav">
+      <app-nav-bar></app-nav-bar>
+    </div>
+    <div
+      [@routeAnimations]="getRouteAnimationData()"
+      class="layout__main">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

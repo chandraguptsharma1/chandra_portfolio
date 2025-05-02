@@ -1,0 +1,32 @@
+import {NgModule} from "@angular/core";
+import {CommonModule} from "@angular/common";
+import { AboutLayoutComponent } from './components/about-layout/about-layout.component';
+import {RouterModule, Routes} from "@angular/router";
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+
+const routes: Routes = [
+  {path: 'about', component: AboutLayoutComponent,data: { animation: 'AboutPage' }, children: [
+      {path: '', redirectTo: 'bio', pathMatch: 'full'},
+      {path: 'bio', loadChildren: () => import('./modules/bio/bio.module').then(m => m.BioModule),data: { animation: 'BioPage' }},
+      {path: 'interests', loadChildren: () => import('./modules/interests/interests.module').then(m => m.InterestsModule),data: { animation: 'InterestsPage' }},
+      {path: 'education', loadChildren: () => import('./modules/education/education.module').then(m => m.EducationModule),data: { animation: 'EducatioPage' }},
+    ]}
+]
+
+
+@NgModule({
+    imports: [
+        CommonModule,
+        RouterModule.forChild(routes),
+
+    ],
+    exports: [
+        NavBarComponent
+    ],
+    declarations: [
+        AboutLayoutComponent,
+        NavBarComponent
+    ]
+})
+
+export class AboutModule{}

@@ -1,0 +1,57 @@
+<div class="game" *ngIf="isNarrowScreen">
+  <span class="game__dec1"><img src="/assets/images/icons/tl-close.svg" alt="icon"></span>
+  <span class="game__dec2"><img src="/assets/images/icons/tr-close.svg" alt="icon"></span>
+  <span class="game__dec3"><img src="/assets/images/icons/bl-close.svg" alt="icon"></span>
+  <span class="game__dec4"><img src="/assets/images/icons/br-close.svg" alt="icon"></span>
+  <div class="game__wrapper">
+    <div class="game__snake">
+      <div class="game-container">
+        <div class="row" *ngFor="let row of board; let i = index;">
+          <div class="column" [ngStyle]="{'background-color': setColors(i, j)}" *ngFor="let cell of row; let j = index"></div>
+        </div>
+        <div
+          *ngIf="!isGameOver"
+          [@fadeInOut]
+          [ngClass]="{'disable-clicks': gameStarted}"
+          (click)="showMenu()"
+          class="start-button first-btn" >start-game</div>
+        <div
+          [@fadeInOut]
+          *ngIf="showMenuChecker"
+          class="new-game-menu"
+             >
+          <span class="new-game-menu-label">Select Mode</span>
+          <div class="start-button new-game-button" (click)="newGame(mode)" *ngFor="let mode of getKeys(all_modes)">{{all_modes[mode]}}</div>
+        </div>
+        <div
+          *ngIf="isGameOver"
+          [@fadeInOut]
+          class="new-game-menu">
+          <p>GAME OVER!</p>
+        </div>
+      </div>
+    </div>
+    <div class="game__info">
+      <div class="game__rules">
+        <div class="game__rules-text">
+          // use keyboard <br>
+          // arrows to play
+        </div>
+        <div class="game__rules-keyboard">
+          <div class="top" [class.click]="pressedKey === 'up'"><span></span></div>
+          <div class="wrap">
+            <div class="left" [class.click]="pressedKey === 'left'"><span></span></div>
+            <div class="bottom" [class.click]="pressedKey === 'down'"><span></span></div>
+            <div class="right" [class.click]="pressedKey === 'right'"><span></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="score-block">
+        <div class="score" [ngClass]="{'new-best-score': newBestScore}">// score: {{score}}</div>
+        <div class="best-score" [ngClass]="{'new-best-score': newBestScore}">// best-score: {{best_score}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

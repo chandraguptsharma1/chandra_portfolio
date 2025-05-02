@@ -1,0 +1,36 @@
+<div
+  [class.active]="isMenuOpen"
+  (click)="toggleMenu()"
+  class="button-nav-mob">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
+<div
+  [class.active]="isMenuOpen"
+  class="nav">
+  <div class="nav__top">
+    <div
+      (click)="toggleList()"
+      [ngClass]="{'open': isListOpen}"
+      class="nav__top-title">projects</div>
+    <div class="nav__top-list" [ngClass]="{'open': isListOpen}">
+      <div
+        *ngFor="let input of inputCheckData"
+        class="nav__top-item">
+        <div class="nav__top-item-img">
+          <img src="/assets/images/icons/{{input}}.svg" alt="angular">
+        </div>
+        <input
+          (click)="toggleMenu()"
+          [checked]="selectedTech.includes(input)"
+          (change)="updateSelectedTech(input)"
+          type="checkbox"
+          [id]="input"
+          class="nav__top-item-check">
+        <label class="nav__top-item-label" [for]="input">{{input | titlecase}}</label>
+      </div>
+
+    </div>
+  </div>
+</div>

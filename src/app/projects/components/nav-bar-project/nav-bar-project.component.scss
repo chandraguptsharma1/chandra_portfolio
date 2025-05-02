@@ -1,0 +1,94 @@
+.nav{
+  &__top{
+
+    &-list{
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      max-height: 238px;
+      overflow: hidden;
+      transition: max-height .5s ease, padding .5s ease;
+      &.open{
+        max-height: 0;
+      }
+    }
+    &-item{
+      padding: 0 22px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      &:last-child{
+        margin: 0 0 20px;
+      }
+      &:first-child{
+        margin: 20px 0 0;
+      }
+      &-check{
+        display: none;
+        &:checked + label::before{
+          background: var(--color-gray) url("/assets/images/icons/check.svg") no-repeat 0 0/contain;
+        }
+        &:checked + label{
+          color: var(--color-white);
+        }
+      }
+      &-label{
+        cursor: pointer;
+        position: relative;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 18px;
+        color: var(--color-gray);
+        padding: 0 0 0 62px;
+        transition: background .3s ease, color .3s ease;
+        @media screen and (max-width: 1500px) {
+          font-size: 13px;
+          line-height: 15px;
+        }
+        &:hover{
+          color: var(--color-white);
+        }
+        &::before{
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 18px;
+          height: 18px;
+          border-radius: 2px;
+          border: 1px solid var(--color-gray);
+          background: transparent;
+          transition: background .3s ease;
+          @media screen and (max-width: 1500px) {
+            width: 14px;
+            height: 14px;
+          }
+        }
+      }
+      &-img{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 55px;
+        width: 24px;
+        height: 24px;
+        @media screen and (max-width: 1500px) {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+
+  &__top{
+    &-list{
+      @media screen and (max-width: 1200px) {
+        max-height: 220px;
+      }
+
+    }
+  }
+
+}

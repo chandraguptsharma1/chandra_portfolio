@@ -1,0 +1,103 @@
+.banner{
+  @media screen and (max-width: 550px) {
+  padding: 0 25px;
+  }
+  &__subtitle{
+    font-size: 18px;
+    font-weight: 450;
+    line-height: 20px;
+    color: var(--color-white-title);
+    @media screen and (max-width: 1500px) {
+      font-size: 15px;
+      line-height: 17px;
+    }
+    @media screen and (max-width: 550px) {
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+  &__title{
+    font-size: 62px;
+    font-weight: 400;
+    line-height: normal;
+    color: var(--color-white-title);
+    margin: 0 0 -5px;
+    @media screen and (max-width: 1500px) {
+      font-size: 40px;
+      line-height: 50px;
+      margin: 0;
+    }
+    @media screen and (max-width: 550px) {
+      font-size: 37px;
+      line-height: 49px;
+    }
+  }
+  &__prof{
+    font-size: 32px;
+    font-weight: 450;
+    line-height: normal;
+    color: var(--color-purple);
+    margin: 0 0 80px;
+    @media screen and (max-width: 1500px) {
+      font-size: 23px;
+      line-height: 27px;
+      margin: 0 0 50px;
+    }
+    @media screen and (max-width: 550px) {
+      font-size: 15px;
+      line-height: 40px;
+      margin: 0 0 80px;
+    }
+  }
+  &__info{
+    font-size: 16px;
+    font-weight: 450;
+    line-height: normal;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 0 0 10px;
+    @media screen and (max-width: 1500px) {
+      font-size: 14px;
+      line-height: 16px;
+    }
+    @media screen and (max-width: 550px) {
+      font-size: 12px;
+      line-height: 14px;
+    }
+    &-text{
+      &:first-child{
+        @media screen and (max-width: 1080px) {
+          display: none;
+        }
+      }
+    }
+  }
+  &__link{
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    color: var(--color-white);
+    @media screen and (max-width: 1500px) {
+      font-size: 14px;
+      line-height: 16px;
+    }
+    @media screen and (max-width: 550px) {
+      font-size: 12px;
+      line-height: 20px;
+    }
+    .const{
+      color: var(--color-purple);
+    }
+    .name{
+      color: var(--color-green);
+    }
+    .link{
+      color: var(--color-orange);
+      transition: color .3s ease;
+      &:hover{
+        color: var(--color-orange-hover);
+      }
+    }
+  }
+}
