@@ -1,4 +1,4 @@
-# Portfolio layout Angular 16
+<!-- # Portfolio layout Angular 16
 
 
 ## Description
@@ -70,4 +70,4 @@ Your contributions are welcome! If you have suggestions to enhance the project o
 
 ## License 
 
-This project is licensed under the MIT License. See the [LICENSE.md](LICENSE.md). file for more information.
+This project is licensed under the MIT License. See the [LICENSE.md](LICENSE.md). file for more information. -->
