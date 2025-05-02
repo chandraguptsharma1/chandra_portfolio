@@ -66,20 +66,13 @@
       contacts
     </div>
     <div class="nav__bottom-list" [ngClass]="{ open: isListOpenContacts }">
-      <a
-        [href]="(currentUser$ | async)?.mailLinkUser"
-        class="nav__bottom-link nav__bottom-email"
-      >
+      <a [href]="" class="nav__bottom-link nav__bottom-email">
         <img
           src="/assets/images/icons/mail-line.svg"
           alt="folder"
         />chandraguptsharma</a
       >
-      <a
-        target="_blank"
-        [href]="(currentUser$ | async)?.telegramLinkUser"
-        class="nav__bottom-link"
-      >
+      <a target="_blank" [href]="" class="nav__bottom-link">
         <img src="/assets/images/icons/telegram-fill.svg" alt="folder" />
         @chandraguptsharma</a
       >
